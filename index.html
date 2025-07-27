@@ -69,16 +69,16 @@
         </nav>
     </header>
 
-    <section id="home"
-        class="relative h-screen flex items-center justify-center text-center text-white bg-custom-teal-contact-gradient overflow-hidden">
-        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
-        <div class="max-w-3xl p-8 relative z-10 animate-fade-in-up">
-            <h1 class="text-6xl font-bold leading-tight mb-4">azulin consulting</h1>
-            <p></p>
-            <p class="text-2xl mb-8 opacity-90">Changing how change happens.</p>
-        </div>
-    </section>
-<section id="services" class="py-20 px-8 bg-gray-50">
+ <section id="home"
+    class="relative h-screen flex items-center justify-center text-center text-white bg-custom-teal-contact-gradient overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    <div class="max-w-3xl p-8 relative z-10 animate-fade-in-up">
+        <h1 id="hero-text" class="text-6xl font-bold leading-tight mb-4 transition-all duration-1000 ease-in-out">azulin</h1>
+        <p id="hero-subtext" class="text-2xl mb-8 opacity-0 transition-all duration-1000 ease-in-out">consulting</p>
+    </div>
+</section>
+    
+    <section id="services" class="py-20 px-8 bg-gray-50">
     <div class="max-w-6xl mx-auto">
         <h2 class="text-center text-4xl font-bold mb-12 relative" style="color: #3E99A3;">
             services
@@ -171,6 +171,31 @@
             });
         });
 
+        // Hero text animation on scroll
+let hasAnimated = false;
+
+window.addEventListener('scroll', function() {
+    const heroText = document.getElementById('hero-text');
+    const heroSubtext = document.getElementById('hero-subtext');
+    
+    if (window.scrollY > 100 && !hasAnimated) {
+        heroText.textContent = 'Changing how change happens';
+        heroSubtext.style.opacity = '0';
+        hasAnimated = true;
+        
+        // Auto-scroll to services after text change
+        setTimeout(() => {
+            document.getElementById('services').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 1500);
+    } else if (window.scrollY <= 100) {
+        heroText.textContent = 'azulin';
+        heroSubtext.style.opacity = '1';
+        hasAnimated = false;
+        }
+            });
         // Header background change on scroll
         window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
