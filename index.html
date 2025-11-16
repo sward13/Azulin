@@ -73,8 +73,8 @@
         class="relative h-screen flex items-center justify-center text-center text-white bg-custom-teal-contact-gradient overflow-hidden">
         <div class="absolute inset-0 bg-black bg-opacity-30"></div>
         <div class="max-w-3xl p-8 relative z-10 animate-fade-in-up">
-            <img src="images/Azulin_New_Logo_Website_700.png" alt="azulin consulting" class="mx-auto mb-6 max-w-md w-full">
-            <p class="text-2xl mb-8 opacity-90">Changing how change happens.</p>
+            <img id="hero-logo" src="images/Azulin_New_Logo_Website_700.png" alt="azulin consulting" class="mx-auto mb-6 max-w-md w-full transition-opacity duration-700">
+            <p id="hero-tagline" class="text-2xl mb-8 opacity-90 transition-opacity duration-700">Changing how change happens.</p>
         </div>
     </section>
     
@@ -168,31 +168,19 @@
             });
         });
 
-        // Hero text animation on scroll
-let hasAnimated = false;
-
+        // Hero logo fade on scroll
 window.addEventListener('scroll', function() {
-    const heroText = document.getElementById('hero-text');
-    const heroSubtext = document.getElementById('hero-subtext');
+    const heroLogo = document.getElementById('hero-logo');
+    const heroTagline = document.getElementById('hero-tagline');
     
-    if (window.scrollY > 100 && !hasAnimated) {
-        heroText.textContent = 'Changing how change happens';
-        heroSubtext.style.opacity = '0';
-        hasAnimated = true;
-        
-        // Auto-scroll to services after text change
-        setTimeout(() => {
-            document.getElementById('services').scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }, 1500);
-    } else if (window.scrollY <= 100) {
-        heroText.textContent = 'azulin';
-        heroSubtext.style.opacity = '1';
-        hasAnimated = false;
-        }
-            });
+    if (window.scrollY > 100) {
+        heroLogo.style.opacity = '0';
+        heroTagline.style.opacity = '1';
+    } else {
+        heroLogo.style.opacity = '1';
+        heroTagline.style.opacity = '1';
+    }
+});
         // Header background change on scroll
         window.addEventListener('scroll', function () {
             const header = document.querySelector('header');
