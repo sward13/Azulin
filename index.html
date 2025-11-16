@@ -75,7 +75,7 @@
         <div class="absolute inset-0 bg-black bg-opacity-30"></div>
        <div class="max-w-3xl p-8 relative z-10 animate-fade-in-up">
             <img id="hero-logo" src="images/Azulin_New_Logo_Website_700.png" alt="azulin consulting" class="mx-auto mb-6 max-w-md w-full transition-opacity duration-700">
-            <p id="hero-tagline" class="text-4xl mb-8 opacity-0 transition-opacity duration-700">Changing how change happens.</p>
+            <p id="hero-tagline" class="text-4xl mb-8 opacity-0 transition-opacity duration-1500">Changing how change happens.</p>
     </div>
     </section>
     
@@ -174,7 +174,7 @@ window.addEventListener('scroll', function() {
     const heroLogo = document.getElementById('hero-logo');
     const heroTagline = document.getElementById('hero-tagline');
     
-    if (window.scrollY > 10) {
+    if (window.scrollY > 100) {
         heroLogo.style.opacity = '0';
         heroTagline.style.opacity = '1';
     } else {
