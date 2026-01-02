@@ -744,172 +744,240 @@
         }
 
         /* CTA Section */
-        .cta {
-            background: linear-gradient(135deg, #5077bb, #6080c0, #599191);
-            color: #ffffff;
-            text-align: center;
-            padding: 4rem 2rem;
+        .cta-section {
             position: relative;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #5077bb 0%, #6f90c7 50%, #599191 100%);
             overflow: hidden;
+            text-align: center;
         }
-
-        /* CTA Animated Elements */
-        .cta-decorative {
+        
+        .cta-shapes {
             position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
         }
-
-        /* Left side geometric shapes */
-        .cta-shape-1 {
-            width: 140px;
-            height: 140px;
-            background: rgba(172, 215, 202, 0.35);
-            border-radius: 50%;
-            top: 20%;
-            left: 8%;
-            animation: float-diagonal 10s ease-in-out infinite;
-        }
-
-        .cta-shape-2 {
-            width: 95px;
-            height: 95px;
-            background: rgba(89, 145, 145, 0.4);
-            border-radius: 50%;
-            bottom: 25%;
-            left: 5%;
-            animation: float-up 8s ease-in-out infinite 1.5s;
-        }
-
-        /* Right side geometric shapes */
-        .cta-shape-3 {
-            width: 220px;
-            height: 220px;
-            border: 4px solid rgba(172, 215, 202, 0.35);
-            border-radius: 50%;
-            top: 15%;
-            right: 10%;
-            animation: pulse-grow 12s ease-in-out infinite;
-        }
-
-        .cta-shape-4 {
-            width: 160px;
-            height: 160px;
-            border: 4px solid rgba(131, 144, 125, 0.4);
-            border-radius: 50%;
-            top: 15%;
-            right: 10%;
-            animation: rotate-pulse 10s ease-in-out infinite 2s;
-        }
-
-        .cta-shape-5 {
-            width: 105px;
-            height: 105px;
-            background: rgba(131, 144, 125, 0.45);
-            border-radius: 50%;
-            bottom: 20%;
-            right: 15%;
-            animation: float-up 9s ease-in-out infinite 3s;
-        }
-
-        /* Bottom scattered elements */
-        .cta-bar-1 {
-            width: 60px;
-            height: 140px;
-            background: rgba(172, 215, 202, 0.3);
-            border-radius: 30px;
-            bottom: 10%;
-            left: 25%;
-            animation: slide-vertical 7s ease-in-out infinite;
-        }
-
-        .cta-bar-2 {
-            width: 50px;
-            height: 110px;
-            background: rgba(89, 145, 145, 0.35);
-            border-radius: 25px;
-            bottom: 15%;
-            right: 30%;
-            animation: slide-vertical 8s ease-in-out infinite 1.5s;
-        }
-
-        /* CTA Flowing thin circles */
-        .cta-thin-circle {
-            position: absolute;
-            border-radius: 50%;
-            border: 2px solid rgba(172, 215, 202, 0.35);
-        }
-
-        .cta-thin-1 {
-            width: 110px;
-            height: 110px;
-            top: 25%;
-            left: 20%;
-            animation: drift-expand 12s ease-in-out infinite;
-        }
-
-        .cta-thin-2 {
-            width: 75px;
-            height: 75px;
-            bottom: 30%;
-            left: 35%;
-            border-color: rgba(89, 145, 145, 0.3);
-            animation: pulse-flow 10s ease-in-out infinite 2s;
-        }
-
-        .cta-thin-3 {
-            width: 90px;
-            height: 90px;
-            top: 40%;
-            right: 25%;
-            border-color: rgba(131, 144, 125, 0.3);
-            animation: float-slow 13s ease-in-out infinite 3s;
-        }
-
-        .cta-thin-4 {
-            width: 65px;
-            height: 65px;
-            bottom: 35%;
-            right: 40%;
-            animation: float-medium 11s ease-in-out infinite 1s;
-        }
-
-        .cta-thin-5 {
-            width: 100px;
-            height: 100px;
-            top: 50%;
-            left: 12%;
-            border-color: rgba(89, 145, 145, 0.35);
-            animation: drift-expand 14s ease-in-out infinite 4s;
-        }
-
+        
         .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
             position: relative;
-            z-index: 2;
+            z-index: 10;
+            max-width: 700px;
+            margin: 0 auto;
         }
-
-        .cta h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2.5rem;
+        
+        .cta-heading {
             color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
-
-        .cta-button {
+        
+        .cta-subtext {
+            color: #f3f9d2;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .cta-button-primary {
             display: inline-block;
             background: #ffffff;
             color: #599191;
-            padding: 1.2rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding: 1rem 3rem;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        .cta-button:hover {
+        
+        .cta-button-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cta-button-secondary {
+            display: block;
+            color: #f3f9d2;
+            font-size: 1rem;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-secondary:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        /* CTA Animated Shapes */
+        .cta-circle {
+            position: absolute;
+            border-radius: 50%;
+        }
+        
+        .cta-circle-1 {
+            width: 140px;
+            height: 140px;
+            background: rgba(172, 215, 202, 0.25);
+            top: 15%;
+            left: 8%;
+            animation: float-up 8s ease-in-out infinite;
+        }
+        
+        .cta-circle-2 {
+            width: 95px;
+            height: 95px;
+            background: rgba(243, 249, 210, 0.2);
+            bottom: 20%;
+            left: 12%;
+            animation: float-diagonal 10s ease-in-out infinite 2s;
+        }
+        
+        .cta-circle-3 {
+            width: 105px;
+            height: 105px;
+            background: rgba(197, 206, 175, 0.25);
+            top: 25%;
+            right: 10%;
+            animation: float-up 9s ease-in-out infinite 1s;
+        }
+        
+        .cta-circle-concentric {
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid rgba(172, 215, 202, 0.2);
+            top: 50%;
+            right: 8%;
+            transform: translateY(-50%);
+        }
+        
+        .cta-concentric-1 {
+            width: 220px;
+            height: 220px;
+            animation: pulse-grow 11s ease-in-out infinite;
+        }
+        
+        .cta-concentric-2 {
+            width: 160px;
+            height: 160px;
+            border-color: rgba(80, 119, 187, 0.25);
+            animation: rotate-pulse 13s ease-in-out infinite 1.5s;
+        }
+        
+        .cta-bar {
+            position: absolute;
+            background: rgba(111, 144, 199, 0.2);
+            border-radius: 30px;
+            bottom: 15%;
+        }
+        
+        .cta-bar-1 {
+            width: 60px;
+            height: 140px;
+            right: 5%;
+            animation: slide-vertical 7s ease-in-out infinite;
+        }
+        
+        .cta-bar-2 {
+            width: 50px;
+            height: 110px;
+            right: 9%;
+            animation: slide-vertical 8s ease-in-out infinite 1.5s;
+        }
+        
+        .cta-thin-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid;
+        }
+        
+        .cta-thin-1 {
+            width: 85px;
+            height: 85px;
+            border-color: rgba(243, 249, 210, 0.2);
+            top: 40%;
+            left: 20%;
+            animation: pulse-flow 12s ease-in-out infinite;
+        }
+        
+        .cta-thin-2 {
+            width: 65px;
+            height: 65px;
+            border-color: rgba(111, 144, 199, 0.2);
+            bottom: 30%;
+            right: 25%;
+            animation: drift-expand 14s ease-in-out infinite 2s;
+        }
+        
+        .cta-thin-3 {
+            width: 100px;
+            height: 100px;
+            border-color: rgba(172, 215, 202, 0.2);
+            top: 20%;
+            right: 30%;
+            animation: float-slow 13s ease-in-out infinite 3s;
+        }
+        
+        .cta-thin-4 {
+            width: 70px;
+            height: 70px;
+            border-color: rgba(197, 206, 175, 0.2);
+            bottom: 35%;
+            left: 25%;
+            animation: pulse-flow 11s ease-in-out infinite 4s;
+        }
+        
+        .cta-thin-5 {
+            width: 110px;
+            height: 110px;
+            border-color: rgba(243, 249, 210, 0.2);
+            top: 60%;
+            left: 5%;
+            animation: drift-expand 15s ease-in-out infinite 1s;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .cta-heading {
+                font-size: 1.75rem;
+            }
+            
+            .cta-subtext {
+                font-size: 1rem;
+            }
+            
+            .cta-button-primary {
+                font-size: 1.1rem;
+                padding: 0.875rem 2rem;
+            }
+            
+            .cta-circle,
+            .cta-bar,
+            .cta-thin-circle {
+                display: none;
+            }
+            
+            .cta-concentric-1,
+            .cta-concentric-2 {
+                width: 120px;
+                height: 120px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cta-heading {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button-primary {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
         }
 
         /* Footer */
@@ -1227,9 +1295,11 @@
         <div class="cta-thin-circle cta-thin-4"></div>
         <div class="cta-thin-circle cta-thin-5"></div>
         
-        <div class="cta-content">
-            <h2>Ready to transform how you work with AI?</h2>
-            <a href="/cdn-cgi/l/email-protection#eb87849982ab8a919e878285c58a82" class="cta-button">Join the waitlist for the next cohort</a>
+         <div class="cta-content">
+            <h2 class="cta-heading">Ready to transform how you work with AI?</h2>
+            <p class="cta-subtext">Let's talk about where you are with AI and whether this program is right for you.</p>
+            <a href="https://calendar.app.google/eKXcv9oFTLnBcvVs7" class="cta-button-primary">Book a Free 15-Min Chat</a>
+            <a href="https://forms.gle/ZhSw1NmA7gPSzHSn7" class="cta-button-secondary">Notify me when the February cohort opens</a>
         </div>
     </section>
 
