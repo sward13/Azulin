@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The AI Advantage - Azulin Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+            background: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(89, 145, 145, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            height: 40px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-logo:hover {
+            opacity: 0.7;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2f6d74;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #599191;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #5077bb 0%, #6080c0 30%, #599191 70%, #6f90c7 100%);
+            padding: 4rem 2rem;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        .hero-decorative {
+            position: absolute;
+        }
+
+        /* Keyframe Animations */
+        @keyframes float-slow {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.3;
+            }
+            33% {
+                transform: translate(30px, -20px) scale(1.3);
+                opacity: 0.5;
+            }
+            66% {
+                transform: translate(-20px, 15px) scale(0.8);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes float-medium {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.25;
+            }
+            50% {
+                transform: translate(-35px, 25px) scale(1.4);
+                opacity: 0.45;
+            }
+        }
+
+        @keyframes pulse-flow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(1.6);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes drift-expand {
+            0%, 100% {
+                transform: translate(0, 0) scale(0.7);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translate(40px, -30px) scale(1.5);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes float-up {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.4;
+            }
+            50% {
+                transform: translateY(-30px) scale(1.1);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes float-diagonal {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(40px, -40px) scale(1.15);
+                opacity: 0.7;
+            }
+        }
+
+        @keyframes pulse-grow {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes rotate-pulse {
+            0%, 100% {
+                transform: rotate(0deg) scale(1);
+                opacity: 0.25;
+            }
+            50% {
+                transform: rotate(180deg) scale(1.15);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes slide-vertical {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.3;
+            }
+            50% {
+                transform: translateY(-50px);
+                opacity: 0.5;
+            }
+        }
+
+        /* Left side - Vertical bars pattern */
+        .vertical-bar {
+            position: absolute;
+            width: 70px;
+            border-radius: 35px;
+            left: 5%;
+        }
+
+        .bar-1 {
+            height: 200px;
+            top: 10%;
+            background: rgba(89, 145, 145, 0.45);
+            animation: slide-vertical 6s ease-in-out infinite;
+        }
+
+        .bar-2 {
+            height: 160px;
+            top: 15%;
+            left: 8%;
+            background: rgba(172, 215, 202, 0.5);
+            animation: slide-vertical 7s ease-in-out infinite 1s;
+        }
+
+        .bar-3 {
+            height: 120px;
+            top: 25%;
+            left: 11%;
+            background: rgba(131, 144, 125, 0.45);
+            animation: slide-vertical 5s ease-in-out infinite 2s;
+        }
+
+        /* Right side - Large concentric circles */
+        .concentric-outer {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            border: 4px solid rgba(172, 215, 202, 0.4);
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            animation: rotate-pulse 12s ease-in-out infinite;
+        }
+
+        .concentric-middle {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 4px solid rgba(89, 145, 145, 0.45);
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            animation: pulse-grow 10s ease-in-out infinite 1s;
+        }
+
+        .concentric-inner {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(131, 144, 125, 0.5);
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            animation: pulse-grow 8s ease-in-out infinite 2s;
+        }
+
+        /* Floating circles scattered around */
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .float-1 {
+            width: 90px;
+            height: 90px;
+            top: 15%;
+            right: 25%;
+            background: rgba(172, 215, 202, 0.5);
+            animation: float-up 7s ease-in-out infinite;
+        }
+
+        .float-2 {
+            width: 70px;
+            height: 70px;
+            top: 70%;
+            right: 30%;
+            background: rgba(89, 145, 145, 0.45);
+            animation: float-diagonal 9s ease-in-out infinite 1.5s;
+        }
+
+        .float-3 {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            right: 5%;
+            background: rgba(131, 144, 125, 0.4);
+            animation: float-up 6s ease-in-out infinite 2s;
+        }
+
+        .float-4 {
+            width: 50px;
+            height: 50px;
+            bottom: 20%;
+            left: 20%;
+            background: rgba(172, 215, 202, 0.45);
+            animation: float-diagonal 8s ease-in-out infinite 3s;
+        }
+
+        /* Additional flowing thin circles */
+        .thin-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(172, 215, 202, 0.35);
+        }
+
+        .thin-1 {
+            width: 100px;
+            height: 100px;
+            top: 30%;
+            left: 15%;
+            animation: pulse-flow 11s ease-in-out infinite;
+        }
+
+        .thin-2 {
+            width: 70px;
+            height: 70px;
+            top: 60%;
+            right: 40%;
+            border-color: rgba(89, 145, 145, 0.3);
+            animation: drift-expand 13s ease-in-out infinite 2s;
+        }
+
+        .thin-3 {
+            width: 85px;
+            height: 85px;
+            bottom: 30%;
+            right: 20%;
+            border-color: rgba(131, 144, 125, 0.3);
+            animation: float-slow 14s ease-in-out infinite 4s;
+        }
+
+        .thin-4 {
+            width: 60px;
+            height: 60px;
+            top: 45%;
+            left: 30%;
+            animation: float-medium 10s ease-in-out infinite 1s;
+        }
+
+        .thin-5 {
+            width: 95px;
+            height: 95px;
+            bottom: 15%;
+            right: 35%;
+            border-color: rgba(89, 145, 145, 0.35);
+            animation: pulse-flow 12s ease-in-out infinite 5s;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-logo {
+            width: 400px;
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 2rem;
+            display: block;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+            animation: fadeInUp 1s ease-out 0.1s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            color: #ffffff;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-subtitle {
+            color: #f3f9d2;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            color: #599191;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Right Place Section */
+        .right-place {
+            background: #f3f9d2;
+            position: relative;
+        }
+
+        .right-place-content {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(89, 145, 145, 0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .right-place h2 {
+            color: #5077bb;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .right-place ul {
+            list-style: none;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .right-place li {
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .right-place li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #599191;
+            border-radius: 50%;
+        }
+
+        /* What You'll Get Section */
+        .benefits {
+            background: #ffffff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(80, 119, 187, 0.05), rgba(172, 215, 202, 0.05));
+            border-radius: 12px;
+            border-left: 4px solid #599191;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(89, 145, 145, 0.15);
+        }
+
+        .benefit-icon {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
+        }
+
+        .benefit-card p {
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* Workshop Grid */
+        .workshops {
+            background: linear-gradient(to bottom, #ffffff, rgba(197, 206, 175, 0.1));
+            position: relative;
+        }
+
+        .workshops::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #599191, transparent);
+        }
+
+        /* Testimonial Section */
+        .testimonial {
+            background: #f3f9d2;
+            padding: 4rem 2rem;
+        }
+
+        .testimonial-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonial-quote {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #16353a;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 3rem;
+            color: #599191;
+            line-height: 0;
+            vertical-align: -0.4rem;
+        }
+
+        .testimonial-quote::after {
+            content: '"';
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 3rem;
+            color: #599191;
+            line-height: 0;
+            vertical-align: -0.4rem;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            color: #2f6d74;
+            font-weight: 600;
+        }
+
+        .testimonial-title {
+            font-size: 1rem;
+            color: #599191;
+            margin-top: 0.5rem;
+        }
+
+        .workshop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .workshop-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 6px 20px rgba(89, 145, 145, 0.12);
+            border-top: 5px solid #5077bb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .workshop-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(172, 215, 202, 0.15), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(89, 145, 145, 0.2);
+        }
+
+        /* Special styling for consultation card - wide and centered */
+        .consultation-card {
+            grid-column: 1 / -1;
+            max-width: 800px;
+            margin: 2rem auto 0;
+            padding: 2.5rem 3rem;
+            background: linear-gradient(135deg, #599191, #acd7ca);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .consultation-card .workshop-number {
+            flex-shrink: 0;
+        }
+
+        .consultation-card .consultation-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .consultation-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .consultation-card .workshop-duration {
+            margin-bottom: 1rem;
+        }
+
+        .consultation-card .workshop-objectives {
+            margin-top: 0;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .consultation-card .workshop-objectives li {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.5rem 0;
+            border-bottom: none;
+        }
+
+        .workshop-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #5077bb, #6f90c7);
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .workshop-card h3 {
+            color: #599191;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .workshop-duration {
+            color: #6f90c7;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .workshop-objectives {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .workshop-objectives li {
+            padding: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(89, 145, 145, 0.1);
+            line-height: 1.6;
+        }
+
+        .workshop-objectives li:last-child {
+            border-bottom: none;
+        }
+
+        .workshop-objectives li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #599191;
+            font-weight: bold;
+        }
+
+        /* Consultation Card - Wide centered layout */
+        .consultation-card {
+            background: linear-gradient(135deg, #599191, #acd7ca);
+            color: #ffffff;
+            border-top: 5px solid #2f6d74;
+            grid-column: 1 / -1;
+            max-width: 900px;
+            margin: 2rem auto 0;
+            padding: 2.5rem 3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .consultation-card .workshop-number {
+            flex-shrink: 0;
+        }
+
+        .consultation-card .consultation-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .consultation-card h3,
+        .consultation-card .workshop-duration {
+            color: #ffffff;
+        }
+
+        .consultation-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .consultation-card .workshop-duration {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            font-style: normal;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #5077bb, #6080c0, #599191);
+            color: #ffffff;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* CTA Animated Elements */
+        .cta-decorative {
+            position: absolute;
+        }
+
+        /* Left side geometric shapes */
+        .cta-shape-1 {
+            width: 140px;
+            height: 140px;
+            background: rgba(172, 215, 202, 0.35);
+            border-radius: 50%;
+            top: 20%;
+            left: 8%;
+            animation: float-diagonal 10s ease-in-out infinite;
+        }
+
+        .cta-shape-2 {
+            width: 95px;
+            height: 95px;
+            background: rgba(89, 145, 145, 0.4);
+            border-radius: 50%;
+            bottom: 25%;
+            left: 5%;
+            animation: float-up 8s ease-in-out infinite 1.5s;
+        }
+
+        /* Right side geometric shapes */
+        .cta-shape-3 {
+            width: 220px;
+            height: 220px;
+            border: 4px solid rgba(172, 215, 202, 0.35);
+            border-radius: 50%;
+            top: 15%;
+            right: 10%;
+            animation: pulse-grow 12s ease-in-out infinite;
+        }
+
+        .cta-shape-4 {
+            width: 160px;
+            height: 160px;
+            border: 4px solid rgba(131, 144, 125, 0.4);
+            border-radius: 50%;
+            top: 15%;
+            right: 10%;
+            animation: rotate-pulse 10s ease-in-out infinite 2s;
+        }
+
+        .cta-shape-5 {
+            width: 105px;
+            height: 105px;
+            background: rgba(131, 144, 125, 0.45);
+            border-radius: 50%;
+            bottom: 20%;
+            right: 15%;
+            animation: float-up 9s ease-in-out infinite 3s;
+        }
+
+        /* Bottom scattered elements */
+        .cta-bar-1 {
+            width: 60px;
+            height: 140px;
+            background: rgba(172, 215, 202, 0.3);
+            border-radius: 30px;
+            bottom: 10%;
+            left: 25%;
+            animation: slide-vertical 7s ease-in-out infinite;
+        }
+
+        .cta-bar-2 {
+            width: 50px;
+            height: 110px;
+            background: rgba(89, 145, 145, 0.35);
+            border-radius: 25px;
+            bottom: 15%;
+            right: 30%;
+            animation: slide-vertical 8s ease-in-out infinite 1.5s;
+        }
+
+        /* CTA Flowing thin circles */
+        .cta-thin-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(172, 215, 202, 0.35);
+        }
+
+        .cta-thin-1 {
+            width: 110px;
+            height: 110px;
+            top: 25%;
+            left: 20%;
+            animation: drift-expand 12s ease-in-out infinite;
+        }
+
+        .cta-thin-2 {
+            width: 75px;
+            height: 75px;
+            bottom: 30%;
+            left: 35%;
+            border-color: rgba(89, 145, 145, 0.3);
+            animation: pulse-flow 10s ease-in-out infinite 2s;
+        }
+
+        .cta-thin-3 {
+            width: 90px;
+            height: 90px;
+            top: 40%;
+            right: 25%;
+            border-color: rgba(131, 144, 125, 0.3);
+            animation: float-slow 13s ease-in-out infinite 3s;
+        }
+
+        .cta-thin-4 {
+            width: 65px;
+            height: 65px;
+            bottom: 35%;
+            right: 40%;
+            animation: float-medium 11s ease-in-out infinite 1s;
+        }
+
+        .cta-thin-5 {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 12%;
+            border-color: rgba(89, 145, 145, 0.35);
+            animation: drift-expand 14s ease-in-out infinite 4s;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            color: #ffffff;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffffff;
+            color: #599191;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #16353a;
+            color: #acd7ca;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            color: #599191;
+            margin: 0;
+        }
+
+        /* Accessibility - Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-logo {
+                width: 300px;
+                margin-bottom: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .workshop-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .right-place-content {
+                padding: 2rem;
+            }
+
+            /* Consultation card mobile layout */
+            .consultation-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+                padding: 2rem;
+            }
+
+            /* Simplify animations on mobile */
+            .concentric-outer,
+            .concentric-middle {
+                width: 200px;
+                height: 200px;
+                right: 5%;
+            }
+
+            .concentric-inner {
+                width: 120px;
+                height: 120px;
+                right: 5%;
+            }
+
+            .vertical-bar {
+                width: 40px;
+            }
+
+            .bar-1 { height: 120px; }
+            .bar-2 { height: 100px; }
+            .bar-3 { height: 80px; }
+
+            .floating-circle {
+                display: none;
+            }
+
+            .thin-circle,
+            .cta-thin-circle {
+                display: none;
+            }
+
+            .testimonial-quote {
+                font-size: 1.2rem;
+            }
+
+            /* Simplify CTA animations on mobile */
+            .cta-shape-3,
+            .cta-shape-4 {
+                width: 120px;
+                height: 120px;
+            }
+
+            .cta-shape-5 {
+                width: 60px;
+                height: 60px;
+            }
+
+            .cta-bar-1,
+            .cta-bar-2 {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="/">
+                <img src="azulinlogoheader.jpg" alt="Azulin Consulting" class="nav-logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#workshops">Workshops</a></li>
+                <li><a href="#consultation">1:1 Consultation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Left side vertical bars -->
+        <div class="vertical-bar bar-1"></div>
+        <div class="vertical-bar bar-2"></div>
+        <div class="vertical-bar bar-3"></div>
+        
+        <!-- Right side concentric circles -->
+        <div class="hero-decorative concentric-outer"></div>
+        <div class="hero-decorative concentric-middle"></div>
+        <div class="hero-decorative concentric-inner"></div>
+        
+        <!-- Floating circles scattered around -->
+        <div class="floating-circle float-1"></div>
+        <div class="floating-circle float-2"></div>
+        <div class="floating-circle float-3"></div>
+        <div class="floating-circle float-4"></div>
+        
+        <!-- Flowing thin circles -->
+        <div class="thin-circle thin-1"></div>
+        <div class="thin-circle thin-2"></div>
+        <div class="thin-circle thin-3"></div>
+        <div class="thin-circle thin-4"></div>
+        <div class="thin-circle thin-5"></div>
+        
+        <div class="hero-content">
+            <img src="/mnt/project/Azulin_Logo_Horizontal_LGHT_Teal.png" alt="Azulin Consulting" class="hero-logo">
+            <h1 class="hero-title">The AI Advantage</h1>
+            <p class="hero-subtitle">AI workshops for busy people who want to maximize their productivity and boost their confidence.</p>
+        </div>
+    </section>
+
+    <!-- You're in the Right Place -->
+    <section class="right-place">
+        <div class="container">
+            <div class="right-place-content">
+                <h2>You're in the right place if you:</h2>
+                <ul>
+                    <li>Know AI matters, but feel like you're missing something or can't keep up</li>
+                    <li>Want tangible results that save time</li>
+                    <li>Need a safe environment to ask questions and build confidence</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Get -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">What You'll Get</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <img src="Icon_Productivity.png" alt="Practical Skills" class="benefit-icon">
+                    <p>Practical AI skills that save hours per week—from productivity hacks to custom assistants</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="Icon_Conversant.png" alt="Professional Confidence" class="benefit-icon">
+                    <p>Confidence to discuss AI professionally and socially</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="Icon_Questions.png" alt="Safe Environment" class="benefit-icon">
+                    <p>A safe environment to experiment and ask questions</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="Icon_Risks.png" alt="Safety Guidelines" class="benefit-icon">
+                    <p>Safety guidelines that reduce anxiety and prevent costly mistakes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops -->
+    <section class="workshops" id="workshops">
+        <div class="container">
+            <h2 class="section-title">Workshop Series</h2>
+            
+            <div class="workshop-grid">
+                <!-- Workshop 1 -->
+                <div class="workshop-card">
+                    <span class="workshop-number">Workshop 1</span>
+                    <h3>Make Sense of AI</h3>
+                    <p class="workshop-duration">Duration: 180 minutes</p>
+                    <ul class="workshop-objectives">
+                        <li>Distinguish between AI and Generative AI</li>
+                        <li>Recognize use cases beyond the obvious</li>
+                        <li>Compare different Gen AI tools—pros and cons</li>
+                        <li>Identify risks and data privacy considerations</li>
+                        <li>Apply prompting best practices</li>
+                        <li>Use voice mode strategically</li>
+                        <li>Make informed decisions about when and how to use AI</li>
+                    </ul>
+                </div>
+
+                <!-- Workshop 2 -->
+                <div class="workshop-card">
+                    <span class="workshop-number">Workshop 2</span>
+                    <h3>Make AI Work Harder</h3>
+                    <p class="workshop-duration">Duration: 120 minutes</p>
+                    <ul class="workshop-objectives">
+                        <li>Treat AI as a collaborative thought partner</li>
+                        <li>Configure chat settings and create custom style guides</li>
+                        <li>Apply advanced prompting techniques</li>
+                        <li>Implement at least 5 productivity hacks immediately</li>
+                        <li>Explain differences between chat, Projects, Agents, and Agentic AI</li>
+                    </ul>
+                </div>
+
+                <!-- Workshop 3 -->
+                <div class="workshop-card">
+                    <span class="workshop-number">Workshop 3</span>
+                    <h3>Make AI Your Assistant</h3>
+                    <p class="workshop-duration">Duration: 90 minutes</p>
+                    <ul class="workshop-objectives">
+                        <li>Configure Projects with custom instructions</li>
+                        <li>Set up at least 1 Project with uploaded documents</li>
+                        <li>Recognize use cases for simple AI agents</li>
+                        <li>Build recurring workflows that save hours weekly</li>
+                    </ul>
+                </div>
+
+                <!-- Consultation -->
+                <div class="workshop-card consultation-card" id="consultation">
+                    <span class="workshop-number">1:1 Consultation</span>
+                    <div class="consultation-content">
+                        <h3>Personalized AI Coaching</h3>
+                        <p class="workshop-duration">Private sessions tailored to your needs—dive deep to 10x your productivity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="testimonial-content">
+            <p class="testimonial-quote">Lori helped move me from AI-overwhelm to thinking 'Hey - I think I can do this!' Now I'm using AI to streamline everything from my personal health monitoring to multiple project workflows!</p>
+            <p class="testimonial-author">—Debbie Howard</p>
+            <p class="testimonial-title">Author, Analyst, AgeTech Go-to-Market</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <!-- Animated geometric shapes -->
+        <div class="cta-decorative cta-shape-1"></div>
+        <div class="cta-decorative cta-shape-2"></div>
+        <div class="cta-decorative cta-shape-3"></div>
+        <div class="cta-decorative cta-shape-4"></div>
+        <div class="cta-decorative cta-shape-5"></div>
+        <div class="cta-decorative cta-bar-1"></div>
+        <div class="cta-decorative cta-bar-2"></div>
+        
+        <!-- Flowing thin circles -->
+        <div class="cta-thin-circle cta-thin-1"></div>
+        <div class="cta-thin-circle cta-thin-2"></div>
+        <div class="cta-thin-circle cta-thin-3"></div>
+        <div class="cta-thin-circle cta-thin-4"></div>
+        <div class="cta-thin-circle cta-thin-5"></div>
+        
+        <div class="cta-content">
+            <h2>Ready to transform how you work with AI?</h2>
+            <a href="/cdn-cgi/l/email-protection#eb87849982ab8a919e878285c58a82" class="cta-button">Join the waitlist for the next cohort</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Azulin LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+    
