@@ -517,7 +517,7 @@
             background: linear-gradient(to bottom, rgba(197, 206, 175, 0.1), #ffffff);
             position: relative;
         }
-
+        
         .ways-to-take-part::before {
             content: '';
             position: absolute;
@@ -528,13 +528,13 @@
             height: 2px;
             background: linear-gradient(to right, transparent, #599191, transparent);
         }
-
+        
         .participation-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 3rem;
             margin-top: 3rem;
-            max-width: 800px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -550,8 +550,8 @@
             position: relative;
             overflow: hidden;
             display: flex;
+            gap: 2.5rem;
             align-items: flex-start;
-            gap: 2rem;
         }
         
         .participation-card:hover {
@@ -559,29 +559,92 @@
             box-shadow: 0 12px 28px rgba(89, 145, 145, 0.2);
         }
         
+        .participation-left-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            min-width: 180px;
+        }
+        
+        .participation-card .session-number {
+            background: #f3f9d2;
+            color: #2f6d74;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+        
         .participation-icon {
             width: 165px;
             height: 165px;
-            flex-shrink: 0;
             object-fit: contain;
         }
         
-        .participation-content {
+        .participation-right-column {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
         
         .participation-card h3 {
             color: #ffffff;
             font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+            margin: 0;
         }
         
         .participation-card .participation-subtitle {
             color: #ffffff;
             font-size: 1.1rem;
-            font-style: normal;
-            margin-top: 0.5rem;
             line-height: 1.6;
+            margin: 0;
+        }
+        
+        .participation-attributes {
+            list-style: none;
+            margin-top: 1rem;
+            padding-left: 0;
+        }
+        
+        .participation-attributes li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            position: relative;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        .participation-attributes li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #f3f9d2;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .participation-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 2rem;
+            }
+            
+            .participation-left-column {
+                min-width: auto;
+            }
+            
+            .participation-right-column {
+                align-items: center;
+            }
+            
+            .participation-attributes {
+                text-align: left;
+            }
         }
         
         /* Special styling for coaching card to make it feel premium */
@@ -1246,38 +1309,48 @@
         </div>
     </section>
 
-     <!-- Ways to Take Part -->
-<section class="ways-to-take-part" id="ways-to-take-part">
-    <div class="container">
-        <h2 class="section-title">Ways to Take Part</h2>
-        
-        <div class="participation-grid">
-            <!-- 1:1 Consultation -->
-            <div class="participation-card">
-                <span class="session-number">1:1</span>
-                <div class="participation-card-content">
-                    <img src="images/Icon_1on1_Coaching.png" alt="1:1 Consultation" class="participation-icon">
-                    <div class="participation-text">
+    <!-- Ways to Take Part Section -->
+    <section class="ways-to-take-part" id="ways-to-take-part">
+        <div class="container">
+            <h2 class="section-title">Ways to Take Part</h2>
+            
+            <div class="participation-grid">
+                <!-- 1:1 Coaching -->
+                <div class="participation-card">
+                    <div class="participation-left-column">
+                        <span class="session-number">1:1</span>
+                        <img src="images/Icon_1on1_Coaching.png" alt="1:1 Consultation" class="participation-icon">
+                    </div>
+                    <div class="participation-right-column">
                         <h3>Personalized AI Coaching</h3>
                         <p class="participation-subtitle">Accelerate your productivity through a series of 'white-glove' coaching sessions, tailored to your individual experience level, your life, and your work.</p>
+                        <ul class="participation-attributes">
+                            <li>Customized learning pace and focus areas</li>
+                            <li>Direct access between sessions via email</li>
+                            <li>Personalized AI tools and workflows built for you</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-
-            <!-- Group Workshops -->
-            <div class="participation-card">
-                <span class="session-number">Group</span>
-                <div class="participation-card-content">
-                    <img src="images/Icon_Small_Groups.png" alt="Group Workshops" class="participation-icon">
-                    <div class="participation-text">
+    
+                <!-- Group Workshops -->
+                <div class="participation-card">
+                    <div class="participation-left-column">
+                        <span class="session-number">Group</span>
+                        <img src="images/Icon_Small_Groups.png" alt="Group Workshops" class="participation-icon">
+                    </div>
+                    <div class="participation-right-column">
                         <h3>Small Learning Cohorts</h3>
                         <p class="participation-subtitle">Join others to learn the topics above and practice hands-on learning in a supportive small group setting</p>
+                        <ul class="participation-attributes">
+                            <li>Maximum 8 participants for personalized attention</li>
+                            <li>Live practice with real-time feedback</li>
+                            <li>Continued community connection and support</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
     
     <!-- Testimonial Section -->
     <section class="testimonial">
