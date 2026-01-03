@@ -321,4 +321,973 @@
             bottom: 30%;
             right: 20%;
             border-color: rgba(131, 144, 125, 0.3);
-            animation: float-slow 14s ease-in
+            animation: float-slow 14s ease-in-out infinite 4s;
+        }
+
+        .thin-4 {
+            width: 60px;
+            height: 60px;
+            top: 45%;
+            left: 30%;
+            animation: float-medium 10s ease-in-out infinite 1s;
+        }
+
+        .thin-5 {
+            width: 95px;
+            height: 95px;
+            bottom: 15%;
+            right: 35%;
+            border-color: rgba(89, 145, 145, 0.35);
+            animation: pulse-flow 12s ease-in-out infinite 5s;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-logo {
+            width: 400px;
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 2rem;
+            display: block;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+            animation: fadeInUp 1s ease-out 0.1s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            color: #ffffff;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-subtitle {
+            color: #f3f9d2;
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            color: #599191;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Right Place Section */
+        .right-place {
+            background: #f3f9d2;
+            position: relative;
+        }
+
+        .right-place-content {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(89, 145, 145, 0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .right-place h2 {
+            color: #5077bb;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .right-place ul {
+            list-style: none;
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .right-place li {
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .right-place li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #599191;
+            border-radius: 50%;
+        }
+
+        /* What You'll Get Section */
+        .benefits {
+            background: #ffffff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(80, 119, 187, 0.05), rgba(172, 215, 202, 0.05));
+            border-radius: 12px;
+            border-left: 4px solid #599191;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(89, 145, 145, 0.15);
+        }
+
+        .benefit-icon {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
+        }
+
+        .benefit-card p {
+            color: #000000;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Sessions Section */
+        .sessions {
+            background: linear-gradient(to bottom, #ffffff, rgba(197, 206, 175, 0.1));
+            position: relative;
+        }
+
+        .sessions::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #599191, transparent);
+        }
+
+        /* Testimonial Section */
+        .testimonial {
+            background: #f3f9d2;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #599191, transparent);
+        }
+
+        .testimonial-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            background: #ffffff;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(89, 145, 145, 0.1);
+        }
+
+        .testimonial-quote {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #16353a;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 3rem;
+            color: #599191;
+            line-height: 0;
+            vertical-align: -0.4rem;
+        }
+
+        .testimonial-quote::after {
+            content: '"';
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 3rem;
+            color: #599191;
+            line-height: 0;
+            vertical-align: -0.4rem;
+        }
+
+        .testimonial-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 1.5rem auto 1rem;
+            display: block;
+            object-fit: cover;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            color: #2f6d74;
+            font-weight: 600;
+        }
+
+        .testimonial-title {
+            font-size: 1rem;
+            color: #599191;
+            margin-top: 0.5rem;
+        }
+
+        .session-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .session-card {
+            background: #f3f9d2;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 6px 20px rgba(89, 145, 145, 0.12);
+            border-top: 5px solid #5077bb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .session-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(172, 215, 202, 0.15), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .session-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(89, 145, 145, 0.2);
+        }
+
+        .session-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #5077bb, #6f90c7);
+            color: #ffffff;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .session-card h3 {
+            color: #599191;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .session-duration {
+            color: #6f90c7;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .session-objectives {
+            list-style: none;
+            margin-top: 1.5rem;
+            text-align: left;
+        }
+
+        .session-objectives li {
+            padding: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            border-bottom: 1px solid rgba(89, 145, 145, 0.1);
+            line-height: 1.6;
+        }
+
+        .session-objectives li:last-child {
+            border-bottom: none;
+        }
+
+        .session-objectives li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #599191;
+            font-weight: bold;
+        }
+
+        /* Ways to Take Part Section */
+        .ways-to-take-part {
+            background: linear-gradient(to bottom, rgba(197, 206, 175, 0.1), #ffffff);
+            position: relative;
+        }
+
+        .ways-to-take-part::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #599191, transparent);
+        }
+
+        .participation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .participation-card {
+            background: linear-gradient(135deg, #599191, #acd7ca);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 6px 20px rgba(89, 145, 145, 0.12);
+            border-top: 5px solid #2f6d74;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .participation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(89, 145, 145, 0.2);
+        }
+
+        .participation-card h3 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .participation-card .participation-subtitle {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-style: normal;
+            margin-top: 0.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            position: relative;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #5077bb 0%, #6f90c7 50%, #599191 100%);
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .cta-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .cta-heading {
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            white-space: nowrap;
+        }
+        
+        .cta-subtext {
+            color: #f3f9d2;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            white-space: nowrap;
+        }
+        
+        .cta-button-primary {
+            display: block;
+            background: #ffffff;
+            color: #599191;
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            margin: 0 auto 1.5rem;
+            max-width: max-content;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .cta-button-secondary {
+            display: block;
+            color: #f3f9d2;
+            font-size: 1rem;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button-secondary:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        /* CTA Animated Shapes */
+        .cta-circle {
+            position: absolute;
+            border-radius: 50%;
+        }
+        
+        .cta-circle-1 {
+            width: 140px;
+            height: 140px;
+            background: rgba(172, 215, 202, 0.25);
+            top: 15%;
+            left: 8%;
+            animation: float-up 8s ease-in-out infinite;
+        }
+        
+        .cta-circle-2 {
+            width: 95px;
+            height: 95px;
+            background: rgba(243, 249, 210, 0.2);
+            bottom: 20%;
+            left: 12%;
+            animation: float-diagonal 10s ease-in-out infinite 2s;
+        }
+        
+        .cta-circle-3 {
+            width: 105px;
+            height: 105px;
+            background: rgba(197, 206, 175, 0.25);
+            top: 25%;
+            right: 10%;
+            animation: float-up 9s ease-in-out infinite 1s;
+        }
+        
+        .cta-circle-concentric {
+            position: absolute;
+            border-radius: 50%;
+            border: 3px solid rgba(172, 215, 202, 0.2);
+            top: 50%;
+            right: 8%;
+            transform: translateY(-50%);
+        }
+        
+        .cta-concentric-1 {
+            width: 220px;
+            height: 220px;
+            animation: pulse-grow 11s ease-in-out infinite;
+        }
+        
+        .cta-concentric-2 {
+            width: 160px;
+            height: 160px;
+            border-color: rgba(80, 119, 187, 0.25);
+            animation: rotate-pulse 13s ease-in-out infinite 1.5s;
+        }
+        
+        .cta-bar {
+            position: absolute;
+            background: rgba(111, 144, 199, 0.2);
+            border-radius: 30px;
+            bottom: 15%;
+        }
+        
+        .cta-bar-1 {
+            width: 60px;
+            height: 140px;
+            right: 5%;
+            animation: slide-vertical 7s ease-in-out infinite;
+        }
+        
+        .cta-bar-2 {
+            width: 50px;
+            height: 110px;
+            right: 9%;
+            animation: slide-vertical 8s ease-in-out infinite 1.5s;
+        }
+        
+        .cta-thin-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid;
+        }
+        
+        .cta-thin-1 {
+            width: 85px;
+            height: 85px;
+            border-color: rgba(243, 249, 210, 0.2);
+            top: 40%;
+            left: 20%;
+            animation: pulse-flow 12s ease-in-out infinite;
+        }
+        
+        .cta-thin-2 {
+            width: 65px;
+            height: 65px;
+            border-color: rgba(111, 144, 199, 0.2);
+            bottom: 30%;
+            right: 25%;
+            animation: drift-expand 14s ease-in-out infinite 2s;
+        }
+        
+        .cta-thin-3 {
+            width: 100px;
+            height: 100px;
+            border-color: rgba(172, 215, 202, 0.2);
+            top: 20%;
+            right: 30%;
+            animation: float-slow 13s ease-in-out infinite 3s;
+        }
+        
+        .cta-thin-4 {
+            width: 70px;
+            height: 70px;
+            border-color: rgba(197, 206, 175, 0.2);
+            bottom: 35%;
+            left: 25%;
+            animation: pulse-flow 11s ease-in-out infinite 4s;
+        }
+        
+        .cta-thin-5 {
+            width: 110px;
+            height: 110px;
+            border-color: rgba(243, 249, 210, 0.2);
+            top: 60%;
+            left: 5%;
+            animation: drift-expand 15s ease-in-out infinite 1s;
+        }
+
+        /* Footer */
+        footer {
+            background: #16353a;
+            color: #acd7ca;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            color: #599191;
+            margin: 0;
+        }
+
+        /* Accessibility - Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-logo {
+                width: 300px;
+                margin-bottom: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .session-grid,
+            .participation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .right-place-content {
+                padding: 2rem;
+            }
+
+            .participation-card {
+                padding: 2rem;
+            }
+
+            /* Simplify animations on mobile */
+            .concentric-outer,
+            .concentric-middle {
+                width: 200px;
+                height: 200px;
+                right: 5%;
+            }
+
+            .concentric-inner {
+                width: 120px;
+                height: 120px;
+                right: 5%;
+            }
+
+            .vertical-bar {
+                width: 40px;
+            }
+
+            .bar-1 { height: 120px; }
+            .bar-2 { height: 100px; }
+            .bar-3 { height: 80px; }
+
+            .floating-circle {
+                display: none;
+            }
+
+            .thin-circle,
+            .cta-thin-circle {
+                display: none;
+            }
+
+            .testimonial-quote {
+                font-size: 1.2rem;
+            }
+
+            .cta-heading {
+                font-size: 1.75rem;
+                white-space: normal;
+            }
+            
+            .cta-subtext {
+                font-size: 1rem;
+                white-space: normal;
+            }
+            
+            .cta-button-primary {
+                font-size: 1.1rem;
+                padding: 0.875rem 2rem;
+            }
+            
+            .cta-circle,
+            .cta-bar {
+                display: none;
+            }
+            
+            .cta-concentric-1,
+            .cta-concentric-2 {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-heading {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button-primary {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="index.html">
+                <img src="images/Azulin_Logo_Horizontal_FLAT_Teal.png" alt="Azulin Consulting" class="nav-logo" style="width: 180px; height: auto;">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Left side vertical bars -->
+        <div class="vertical-bar bar-1"></div>
+        <div class="vertical-bar bar-2"></div>
+        <div class="vertical-bar bar-3"></div>
+        
+        <!-- Right side concentric circles -->
+        <div class="hero-decorative concentric-outer"></div>
+        <div class="hero-decorative concentric-middle"></div>
+        <div class="hero-decorative concentric-inner"></div>
+        
+        <!-- Floating circles scattered around -->
+        <div class="floating-circle float-1"></div>
+        <div class="floating-circle float-2"></div>
+        <div class="floating-circle float-3"></div>
+        <div class="floating-circle float-4"></div>
+        
+        <!-- Flowing thin circles -->
+        <div class="thin-circle thin-1"></div>
+        <div class="thin-circle thin-2"></div>
+        <div class="thin-circle thin-3"></div>
+        <div class="thin-circle thin-4"></div>
+        <div class="thin-circle thin-5"></div>
+        
+        <div class="hero-content">
+            <img src="images/Azulin_Logo_Horizontal_LGHT_Teal.png" alt="Azulin Consulting" class="hero-logo">
+            <h1 class="hero-title">The AI Advantage</h1>
+            <p class="hero-subtitle">AI workshops for busy people who want to maximize their productivity and boost their confidence.</p>
+        </div>
+    </section>
+
+    <!-- You're in the Right Place -->
+    <section class="right-place">
+        <div class="container">
+            <div class="right-place-content">
+                <h2>You're in the right place if you:</h2>
+                <ul>
+                    <li>Know AI matters, but feel like you're missing something or can't keep up</li>
+                    <li>Want tangible results that save time</li>
+                    <li>Need a safe environment to ask questions and build confidence</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Get -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">What You'll Get</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <img src="images/Icon_Productivity.png" alt="Practical Skills" class="benefit-icon">
+                    <p>Practical AI skills that save hours per week—from productivity hacks to custom assistants</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="images/Icon_Conversant.png" alt="Professional Confidence" class="benefit-icon">
+                    <p>Confidence to discuss AI professionally and socially</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="images/Icon_Questions.png" alt="Safe Environment" class="benefit-icon">
+                    <p>A safe environment to experiment and ask questions</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="images/Icon_Risks.png" alt="Safety Guidelines" class="benefit-icon">
+                    <p>Safety guidelines that reduce anxiety and prevent costly mistakes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessions -->
+    <section class="sessions" id="sessions">
+        <div class="container">
+            <h2 class="section-title">Sessions</h2>
+            
+            <div class="session-grid">
+                <!-- Session 1 -->
+                <div class="session-card">
+                    <span class="session-number">Session 1</span>
+                    <h3>Make Sense of AI</h3>
+                    <p class="session-duration">Duration: 180 minutes</p>
+                    <ul class="session-objectives">
+                        <li>Distinguish between AI and Generative AI</li>
+                        <li>Recognize use cases beyond the obvious</li>
+                        <li>Compare different Gen AI tools—pros and cons</li>
+                        <li>Identify risks and data privacy considerations</li>
+                        <li>Apply prompting best practices</li>
+                        <li>Use voice mode strategically</li>
+                        <li>Make informed decisions about when and how to use AI</li>
+                    </ul>
+                </div>
+
+                <!-- Session 2 -->
+                <div class="session-card">
+                    <span class="session-number">Session 2</span>
+                    <h3>Make AI Work Harder</h3>
+                    <p class="session-duration">Duration: 120 minutes</p>
+                    <ul class="session-objectives">
+                        <li>Treat AI as a collaborative thought partner</li>
+                        <li>Configure chat settings and create custom style guides</li>
+                        <li>Apply advanced prompting techniques</li>
+                        <li>Implement at least 5 productivity hacks immediately</li>
+                        <li>Explain differences between chat, Projects, Agents, and Agentic AI</li>
+                    </ul>
+                </div>
+
+                <!-- Session 3 -->
+                <div class="session-card">
+                    <span class="session-number">Session 3</span>
+                    <h3>Make AI Your Assistant</h3>
+                    <p class="session-duration">Duration: 90 minutes</p>
+                    <ul class="session-objectives">
+                        <li>Configure Projects with custom instructions</li>
+                        <li>Set up at least 1 Project with uploaded documents</li>
+                        <li>Recognize use cases for simple AI agents</li>
+                        <li>Build recurring workflows that save hours weekly</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="testimonial-content">
+            <p class="testimonial-quote">I was using AI here and there, but I knew there was so much more I could be doing—I just needed someone to show me how. Lori met me where I was and gave me the confidence to really explore it. Now I use AI every day in ways I never thought possible—everything from personal health monitoring to managing multiple project workflows!!</p>
+            <img src="images/Debbie_Howard.jpg" alt="Debbie Howard" class="testimonial-photo">
+            <p class="testimonial-author">- Debbie Howard</p>
+            <p class="testimonial-title">Author, Analyst, AgeTech Go-to-Market</p>
+        </div>
+    </section>
+
+    <!-- Ways to Take Part -->
+    <section class="ways-to-take-part" id="ways-to-take-part">
+        <div class="container">
+            <h2 class="section-title">Ways to Take Part</h2>
+            
+            <div class="participation-grid">
+                <!-- 1:1 Consultation -->
+                <div class="participation-card">
+                    <span class="session-number">1:1 Consultation</span>
+                    <h3>Personalized AI Coaching</h3>
+                    <p class="participation-subtitle">Private sessions tailored to your needs—dive deep to 10x your productivity</p>
+                </div>
+
+                <!-- Group Workshops -->
+                <div class="participation-card">
+                    <span class="session-number">Group Workshops</span>
+                    <h3>Small Learning Cohorts</h3>
+                    <p class="participation-subtitle">Join others to for...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-shapes">
+            <!-- Left side circles -->
+            <div class="cta-circle cta-circle-1"></div>
+            <div class="cta-circle cta-circle-2"></div>
+            
+            <!-- Right side circles -->
+            <div class="cta-circle-concentric cta-concentric-1"></div>
+            <div class="cta-circle-concentric cta-concentric-2"></div>
+            <div class="cta-circle cta-circle-3"></div>
+            
+            <!-- Bottom bars -->
+            <div class="cta-bar cta-bar-1"></div>
+            <div class="cta-bar cta-bar-2"></div>
+            
+            <!-- Thin circles scattered -->
+            <div class="cta-thin-circle cta-thin-1"></div>
+            <div class="cta-thin-circle cta-thin-2"></div>
+            <div class="cta-thin-circle cta-thin-3"></div>
+            <div class="cta-thin-circle cta-thin-4"></div>
+            <div class="cta-thin-circle cta-thin-5"></div>
+        </div>
+        
+        <div class="cta-content">
+            <h2 class="cta-heading">Ready to transform how you work with AI?</h2>
+            <p class="cta-subtext">Let's talk about where you are with AI and whether this program is right for you.</p>
+            <a href="https://calendar.app.google/eKXcv9oFTLnBcvVs7" class="cta-button-primary">Book a Free 15-Min Chat</a>
+            <div style="margin-top: 1rem;">
+                🔔 <a href="https://forms.gle/ZhSw1NmA7gPSzHSn7" class="cta-button-secondary">Notify me when the February cohort is announced</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Azulin LLC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
