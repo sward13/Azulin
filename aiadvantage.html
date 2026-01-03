@@ -512,6 +512,63 @@
             background: linear-gradient(to right, transparent, #599191, transparent);
         }
 
+        /* Ways to Take Part Section */
+        .ways-to-take-part {
+            background: linear-gradient(to bottom, rgba(197, 206, 175, 0.1), #ffffff);
+            position: relative;
+        }
+
+        .ways-to-take-part::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #599191, transparent);
+        }
+
+        .participation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .participation-card {
+            background: linear-gradient(135deg, #599191, #acd7ca);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 2.5rem 3rem;
+            box-shadow: 0 6px 20px rgba(89, 145, 145, 0.12);
+            border-top: 5px solid #2f6d74;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .participation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(89, 145, 145, 0.2);
+        }
+
+        .participation-card h3 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .participation-card .participation-subtitle {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-style: normal;
+            margin-top: 0.5rem;
+        }
+
         /* Testimonial Section */
         .testimonial {
             background: #f3f9d2;
@@ -671,63 +728,6 @@
             left: 0;
             color: #599191;
             font-weight: bold;
-        }
-
-        /* Ways to Take Part Section */
-        .ways-to-take-part {
-            background: linear-gradient(to bottom, rgba(197, 206, 175, 0.1), #ffffff);
-            position: relative;
-        }
-
-        .ways-to-take-part::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #599191, transparent);
-        }
-
-        .participation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .participation-card {
-            background: linear-gradient(135deg, #599191, #acd7ca);
-            color: #ffffff;
-            border-radius: 16px;
-            padding: 2.5rem 3rem;
-            box-shadow: 0 6px 20px rgba(89, 145, 145, 0.12);
-            border-top: 5px solid #2f6d74;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .participation-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 28px rgba(89, 145, 145, 0.2);
-        }
-
-        .participation-card h3 {
-            color: #ffffff;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .participation-card .participation-subtitle {
-            color: #ffffff;
-            font-size: 1.1rem;
-            font-style: normal;
-            margin-top: 0.5rem;
         }
 
         /* CTA Section */
@@ -1216,16 +1216,6 @@
         </div>
     </section>
 
-    <!-- Testimonial Section -->
-    <section class="testimonial">
-        <div class="testimonial-content">
-            <p class="testimonial-quote">I was using AI here and there, but I knew there was so much more I could be doing—I just needed someone to show me how. Lori met me where I was and gave me the confidence to really explore it. Now I use AI every day in ways I never thought possible—everything from personal health monitoring to managing multiple project workflows!!</p>
-            <img src="images/Debbie_Howard.jpg" alt="Debbie Howard" class="testimonial-photo">
-            <p class="testimonial-author">- Debbie Howard</p>
-            <p class="testimonial-title">Author, Analyst, AgeTech Go-to-Market</p>
-        </div>
-    </section>
-
     <!-- Ways to Take Part -->
     <section class="ways-to-take-part" id="ways-to-take-part">
         <div class="container">
@@ -1246,6 +1236,16 @@
                     <p class="participation-subtitle">Join others to for...</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+        <div class="testimonial-content">
+            <p class="testimonial-quote">I was using AI here and there, but I knew there was so much more I could be doing—I just needed someone to show me how. Lori met me where I was and gave me the confidence to really explore it. Now I use AI every day in ways I never thought possible—everything from personal health monitoring to managing multiple project workflows!!</p>
+            <img src="images/Debbie_Howard.jpg" alt="Debbie Howard" class="testimonial-photo">
+            <p class="testimonial-author">- Debbie Howard</p>
+            <p class="testimonial-title">Author, Analyst, AgeTech Go-to-Market</p>
         </div>
     </section>
 
